@@ -1,0 +1,35 @@
+{
+    "authenticationMethod": "route",
+    "routes": [
+      {
+        "source": "^/srv/(.*)$",
+        "target": "$1",
+        "service": "srv_api",
+        "authenticationType": "xsuaa"
+      },
+      {
+        "source": "^/app/(.*)$",
+        "localDir": "resources",
+        "cacheControl": "no-cache",
+        "authenticationType": "none"
+      },
+      {
+        "source": "^/User/(.*)$",
+        "target": "$1",
+        "service": "srv_api",
+        "authenticationType": "xsuaa",
+        "scope": "$XSAPPNAME.User"
+      },
+      {
+        "source": "^/user-api(.*)",
+        "target": "$1",
+        "service": "sap-approuter-userapi"
+    },
+    {
+        "source": "^/user-api/currentUser$",
+        "target": "/currentUser",
+        "service": "sap-approuter-userapi"
+    }
+    ]
+  }
+  

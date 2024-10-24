@@ -1,0 +1,58 @@
+###
+POST http://localhost:4004/odata/v4/portal-srv/Requests
+Content-Type: application/json
+
+{
+    "materialGroup": "FIBER",
+    "purchaseGroup": "Procurement Group A",
+    "createdBy": "John Doe",
+    "requestedFor": "Jane Smith",
+    "enterpriseProcurement": "Yes",
+    "enterpriseProcurementOrganizationUnit": "Unit A",
+    "requestType": "New Purchase",
+    "commodityType": "Hardware",
+    "budgetApproved": true,
+    "projectName": "Project X",
+    "typeOfFunding": "Internal",
+    "estimatedProjAmount": 10000.00,
+    "estimatedProjStartDate": "2024-10-01",
+    "estimatedProjEndDate": "2024-12-31",
+    "cyberRiskLevel": "Low",
+    "potentialSupplier": "Supplier A",
+    "nercCIP": "Yes",
+    "frmApproval": "In Process",
+    "priority": "High",
+    "edisonRep": "Rep A",
+    "provideProcReqDetails": "Detailed description here.",
+    "comments": "Additional comments go here."
+}
+
+###
+GET http://localhost:4004/odata/v4/portal-srv/Requests
+
+### Test the Update API
+PATCH http://localhost:4004/odata/v4/portal-srv/Requests('b8d0c8d1-57bb-4991-acd0-e6281889731b')
+Content-Type: application/json
+
+{
+  "frmApproval": "Resrtxhgbject"
+}
+
+
+### Test the Update API
+PATCH http://localhost:4004/odata/v4/portal-srv/Requests('6f1d77fc-9481-4fbe-a852-cfd1555f3ef5')
+Content-Type: application/json
+
+{
+  "frmApproval": "Reject"
+}
+
+
+### Test the approveRequest action
+POST http://localhost:4004/odata/v4/portal-srv/approveRequest
+Content-Type: application/json
+
+{
+  "requestId": "c41f1733-7dc3-4943-9a39-388dc7a62b51",      
+  "frmApproval": "Approved"  
+}

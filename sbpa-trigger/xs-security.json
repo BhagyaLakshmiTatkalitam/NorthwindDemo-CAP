@@ -1,0 +1,7 @@
+{
+  "xsappname":"sbpa-trigger-${org}-${space}",
+  "tenant-mode":"dedicated",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}

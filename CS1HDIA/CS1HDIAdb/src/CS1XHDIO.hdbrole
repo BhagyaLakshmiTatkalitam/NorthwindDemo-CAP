@@ -1,0 +1,16 @@
+{
+  "role": {
+    "object_privileges": [
+      {
+        "name": "CS1TAB",
+        "type": "TABLE",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      }
+    ],
+    "global_roles": [
+      "CS1XHDIO#"
+    ]
+  }
+}

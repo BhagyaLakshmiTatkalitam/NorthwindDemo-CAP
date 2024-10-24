@@ -1,0 +1,13 @@
+{
+    "materialGroups": [
+      { "id": "MIG_01", "name": "Material Group 1" },
+      { "id": "MIG_02", "name": "Material Group 2" },
+      { "id": "MIG_03", "name": "Material Group 3" }
+    ],
+    "purGroups": [
+      { "id": "PG_01", "name": "Purchasing Group 1" },
+      { "id": "PG_02", "name": "Purchasing Group 2" },
+      { "id": "PG_03", "name": "Purchasing Group 3" }
+    ]
+  }
+  

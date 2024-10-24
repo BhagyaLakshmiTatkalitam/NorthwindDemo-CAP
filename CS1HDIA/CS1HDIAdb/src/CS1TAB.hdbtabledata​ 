@@ -1,0 +1,30 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "CS1TAB",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "CS1TAB.csv",
+                "has_header": false,
+                "type_config": {
+                    "delimiter": ","
+                }
+            },
+            "import_settings": {
+                "import_columns": [
+                    "SalesOrderId",
+                    "ProductId",
+                    "Quantity",
+                    "DeliveryDate"
+                ]
+            },
+            "column_mappings": {
+                "SalesOrderId": 1,
+                "ProductId": 2,
+                "Quantity": 3,
+                "DeliveryDate": 4
+            }
+        }
+    ]
+}

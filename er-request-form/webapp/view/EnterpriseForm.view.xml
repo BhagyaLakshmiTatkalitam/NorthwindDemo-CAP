@@ -1,0 +1,483 @@
+<mvc:View controllerName="errequestform.controller.EnterpriseForm"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+   <Page>
+        <content>
+            <Panel
+                id="RequestForm"
+                visible="true"
+            >
+                <tnt:ToolHeader
+                    id="shellLikeToolHeader"
+                    class="sapUiTinyMargin"
+                >
+                    <Title
+                        text="Enterprise Request form"
+                        wrapping="false"
+                        id="FormName"
+                        textAlign="Center"
+                    >
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="Disappear" />
+                        </layoutData>
+                    </Title>
+
+                    <ToolbarSpacer />
+                </tnt:ToolHeader>
+                <Wizard
+                    id="CreateProductWizard"
+                    finishButtonText="Submit"
+                    currentStep="ProductTypeStep"
+                    class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+                    height="100%"
+                    complete="onComplete"
+                >
+                    <WizardStep
+                        id="ProductTypeStep"
+                        title="Requested"
+                    >
+                        <VBox class="">
+                            <f:SimpleForm
+                                id="234"
+                                editable="true"
+                                layout="ColumnLayout"
+                                columnsM="2"
+                                columnsL="3"
+                                columnsXL="4"
+                            >
+                                <f:content>
+                                    <core:Title text="" />
+                                    <Label
+                                        text="Created By"
+                                        required="true"
+                                    
+                                    />
+                                    <Input
+                                    id="createdByid"
+                                        value="{jsonModel>/FormData/CreatedBy}"
+                                        placeholder="CreatedBy"
+                                    />
+
+                                    <Label
+                                        text="Requested for"
+                                        required="false"
+                                    />
+                                    <ComboBox
+                                        id="RequestedforID"
+                                        placeholder="Select Requested for"
+                                        items="{
+                                        
+					path: 'jsonModel>/FormData/RequestedFor'
+					
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Material Group"
+                                        required="false"
+                                    />
+                                    <ComboBox
+                                        id="materialgroupID"
+                                        placeholder="Select Material Group"
+                                        selectionChange="onMaterialGroupSelect"
+                                        items="{
+					path: 'jsonModel>/FormData/MaterialGroup'
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Purchase Group"
+                                        required="false"
+                                    />
+                                    <ComboBox
+                                        id="idPurchaseGroup"
+                                        placeholder="Select Purchase Group"
+                                        selectionChange="onPurGroupSelect"
+                                        items="{
+						path: 'jsonModel>/FormData/PurchaseGroup',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+                                </f:content>
+                            </f:SimpleForm>
+                        </VBox>
+                    </WizardStep>
+
+                    <WizardStep
+                        id="ProductInfoStep"
+                        title="Stakeholder"
+                    >
+                        <!-- Table to be shown when the selected keys match -->
+                        <Table
+                            id="stakeholderTable"
+                            visible="false"
+                        >
+                            <columns>
+                                <Column>
+                                    <Text text="Column 1" />
+                                </Column>
+                                <Column>
+                                    <Text text="Column 2" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="Sample Data 1" />
+                                        <Text text="Sample Data 2" />
+                                    </cells>
+                                </ColumnListItem>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="Sample Data 3" />
+                                        <Text text="Sample Data 4" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+
+                        <VBox class="">
+                            <f:SimpleForm
+                                id="234dd"
+                                editable="true"
+                                layout="ColumnLayout"
+                                columnsM="2"
+                                columnsL="3"
+                                columnsXL="4"
+                                visible="false"
+                            >
+                                <f:content>
+                                    <core:Title text="" />
+                                    <Label
+                                        text="Enterprise Procurement"
+                                        required="true"
+                                    />
+                                    <Input
+                                    id="enterpriseID"
+                                        value="{jsonModel>/FormData/Enterprise Procurement}"
+                                    />
+
+                                    <Label
+                                        text="Organization Unit"
+                                        required="true"
+                                    />
+                                    <ComboBox
+                                        id="OrganizationUnitID"
+                                        placeholder="Select Organization Unit"
+                                        items="{
+					path: 'jsonModel>/FormData/OrgUnits',
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="For"
+                                        required="true"
+                                    />
+                                    <Input value="{jsonModel>/FormData/For}" id="for" />
+
+                                    <Label
+                                        text="Request Type"
+                                        required="true"
+                                    />
+                                    <ComboBox
+                                        id="idRequestType"
+                                        placeholder="Select Request Type"
+                                        items="{
+						path: 'jsonModel>/FormData/RequirementType',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Commodity Type"
+                                        required="true"
+                                    />
+                                    <ComboBox
+                                        id="idCommodity"
+                                        placeholder="Select Commodity Type"
+                                        items="{
+						path: 'jsonModel>/FormData/CommodityType',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Budget Approved"
+                                        required="true"
+                                    />
+                                    <ComboBox
+                                        id="idBudget"
+                                        placeholder="Select Budget Approved"
+                                        items="{
+						path: 'jsonModel>/FormData/BudgetApproved',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Project Name"
+                                        required="true"
+                                    />
+                                    <Input
+                                        value="{jsonModel>/FormData/Project Name}" id="ProjectName"
+                                        
+                                    />
+
+                                    <Label
+                                        text="Type of Funding"
+                                        required="true"
+                                    />
+                                    <ComboBox
+                                        id="idFunding"
+                                        placeholder="Select Type of Funding"
+                                        items="{
+						path: 'jsonModel>/FormData/TypeOfFunding',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Estimated Proj.Amount"
+                                        required="true"
+                                    />
+                                    <Input
+                                        value="{jsonModel>/FormData/ProjectAmount}" id="projectAmount"
+                                    />
+
+                                    <Label
+                                        text="Estimated Proj.StartDate"
+                                        required="false"
+                                    />
+                                    <DatePicker
+                                        id="Date"
+                                        
+                                        displayFormat="yyyy-MM-dd" 
+                                        required="true"
+                                        value="{}"
+                                    />
+
+                                    <Label
+                                        text="Estimated Proj.EndDate"
+                                        required="false"
+                                    />
+                                    <DatePicker
+                                        id="DateA"
+                                        displayFormat="yyyy-MM-dd"
+                                        required="true"
+                                        value="{}"
+                                    />
+
+                                    <Label
+                                        text="Cyber Risk Level"
+                                        required="false"
+                                    />
+                                    <ComboBox
+                                        id="idCyberrisklevel"
+                                        placeholder="Select Cyber Risk Level"
+                                        items="{
+						path: 'jsonModel>/FormData/CyberRiskLevel',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="Potential Supplier"
+                                        required="false"
+                                    />
+                                    <ComboBox
+                                        id="idPotential"
+                                        placeholder="Select Potential Supplier"
+                                        items="{
+						path: 'jsonModel>/FormData/PotentialSuppliers',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="NERC CIP"
+                                        required="true"
+                                    />
+                                    <ComboBox
+                                        id="idNERC"
+                                        placeholder="Select NERC CIP"
+                                        items="{
+						path: 'jsonModel>/FormData/NERC_CIP',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+
+                                    <Label
+                                        text="FRM Approval"
+                                        required="false"
+                                    />
+                                    <Input
+                                        value="{jsonModel>/FormData/FRM Approval}" id="FRMApproval"
+                                    />
+
+                                    <Label
+                                        text="Priority"
+                                        required="false"
+                                    />
+                                    <ComboBox
+                                        id="idPriority"
+                                        placeholder="Select Priority"
+                                        items="{
+						path: 'jsonModel>/FormData/Priority',
+					
+					sorter: { path: 'text' }
+				}"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </ComboBox>
+                                    <Label
+                                        text="Edison Rep"
+                                        required="false"
+                                    />
+                                    <Input
+                                        value="{jsonModel>/FormData/CreatedBy}" id="EdisonRep"
+                                    />
+
+                                    <Label
+                                        text="Provide Proc.Req.Details"
+                                        required="true"
+                                    />
+                                    <TextArea rows="6" placeholder="Details" id="Details"/>
+                                </f:content>
+                            </f:SimpleForm>
+                        </VBox>
+                    </WizardStep>
+
+                    <WizardStep
+                        id="PricingStep"
+                        title="Documents"
+                        validated="true"
+                    >
+                        <UploadCollection
+                            id="UploadCollectiaon"
+                            maximumFilenameLength="55"
+                            maximumFileSize="10"
+                            multiple="true"
+                            sameFilenameAllowed="true"
+                            instantUpload="false"
+                            noDataDescription="Drag and Drop files here"
+                            change="onChange"
+                            fileDeleted="onFileDeleted"
+                            filenameLengthExceed="onFilenameLengthExceed"
+                            fileSizeExceed="onFileSizeExceed"
+                            typeMissmatch="onTypeMissmatch"
+                            uploadComplete="onUploadComplete"
+                            beforeUploadStarts="onBeforeUploadStarts"
+                        />
+                        <Button
+                            id="Buttosn"
+                            text="Upload Now"
+                            press="onStartUpload"
+                        />
+                    </WizardStep>
+
+                    <WizardStep
+                        id="PricingSteps"
+                        title="Comments"
+                        validated="true"
+                    >
+                        <VBox class="">
+                            <f:SimpleForm
+                                id="234hd"
+                                editable="true"
+                                layout="ColumnLayout"
+                                columnsM="2"
+                                columnsL="3"
+                                columnsXL="4"
+                            >
+                                <f:content>
+                                    <Label
+                                        text="Comments"
+                                        textAlign="Begin"
+                                    />
+                                    <TextArea
+                                        value="{}"
+                                        required="true"
+                                        id="Comments"
+                                    />
+                                </f:content>
+                            </f:SimpleForm>
+                        </VBox>
+                    </WizardStep>
+                </Wizard>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

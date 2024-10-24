@@ -1,0 +1,8 @@
+{
+  "xsappname": "ER-PORTAL-${org}-${space}",
+  "tenant-mode": "dedicated",
+  "description": "ER-PORTAL App",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}

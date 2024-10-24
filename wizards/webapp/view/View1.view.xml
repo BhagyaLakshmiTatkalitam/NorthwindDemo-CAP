@@ -1,0 +1,130 @@
+<!-- <mvc:View controllerName="com.cy.wizards.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <Wizard id="myWizard" complete="onComplete">
+        
+        <WizardStep id="wizardStep1" title="Select Material and Purchasing Group">
+            <VBox>
+                <Label text="Material Group"/>
+                <ComboBox id="comboMaterialGroup" items="{/materialGroups}" selectionChange="onMaterialGroupSelect">
+                    <core:Item key="{id}" text="{name}" />
+                </ComboBox>
+                
+                <Label text="Purchasing Group"/>
+                <ComboBox id="comboPurGroup" items="{/purGroups}" selectionChange="onPurGroupSelect">
+                    <core:Item key="{id}" text="{name}" />
+                </ComboBox>
+            </VBox>
+        </WizardStep>
+
+                <WizardStep id="wizardStep2" title="Details">
+            <VBox>
+              
+                <Table id="myTable" visible="false">
+                    <columns>
+                        <Column>
+                            <Text text="Column 1" />
+                        </Column>
+                        <Column>
+                            <Text text="Column 2" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="Sample Data 1" />
+                                <Text text="Sample Data 2" />
+                            </cells>
+                        </ColumnListItem>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="Sample Data 3" />
+                                <Text text="Sample Data 4" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+                                <f:SimpleForm id="myForm" visible="false">
+                    <Label text="Field 1" />
+                    <Input placeholder="Enter value" />
+                    <Label text="Field 2" />
+                    <Input placeholder="Enter value" />
+                </SimpleForm>
+            </VBox>
+        </WizardStep>
+    </Wizard>
+</mvc:View>
+
+ -->
+
+
+
+ <mvc:View
+    controllerName="com.cy.wizards.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <Wizard id="myWizard" complete="onComplete">
+        <!-- First Step with ComboBoxes -->
+        <WizardStep id="wizardStep1" title="Select Material and Purchasing Group">
+            <VBox>
+                <Label text="Material Group"/>
+                <ComboBox id="comboMaterialGroup" items="{/materialGroups}" selectionChange="onMaterialGroupSelect">
+                    <core:Item key="{id}" text="{name}" />
+                </ComboBox>
+                
+                <Label text="Purchasing Group"/>
+                <ComboBox id="comboPurGroup" items="{/purGroups}" selectionChange="onPurGroupSelect">
+                    <core:Item key="{id}" text="{name}" />
+                </ComboBox>
+            </VBox>
+        </WizardStep>
+
+        <!-- Second Step with Conditional Table or Form -->
+        <WizardStep id="wizardStep2" title="Details">
+            <VBox>
+                <Table id="myTable" visible="false">
+                    <columns>
+                        <Column>
+                            <Text text="Column 1" />
+                        </Column>
+                        <Column>
+                            <Text text="Column 2" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="Sample Data 1" />
+                                <Text text="Sample Data 2" />
+                            </cells>
+                        </ColumnListItem>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="Sample Data 3" />
+                                <Text text="Sample Data 4" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+                <f:SimpleForm id="myForm" visible="false">
+                    <Label text="Field 1" />
+                    <Input placeholder="Enter value" />
+                    <Label text="Field 2" />
+                    <Input placeholder="Enter value" />
+                </f:SimpleForm>
+            </VBox>
+        </WizardStep>
+    </Wizard>
+
+</mvc:View>
+

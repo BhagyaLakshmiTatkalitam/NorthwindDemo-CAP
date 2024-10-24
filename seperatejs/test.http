@@ -1,0 +1,85 @@
+###
+GET http://localhost:4004/odata/v4/my/Books
+
+###
+POST http://localhost:4004/odata/v4/my/Books
+Content-Type: application/json
+
+{
+
+
+    "title": "New Book",
+    "author":{"ID":"f975e111-f55b-4042-9ea3-b94eb739d2e4"}
+
+}
+
+###
+GET http://localhost:4004/odata/v4/my/Authors
+
+###
+POST http://localhost:4004/odata/v4/my/Authors
+Content-Type: application/json
+
+{
+    "name": "Bindu sri"
+}
+
+
+###
+GET http://localhost:4004/odata/v4/my/Publishers
+
+###
+GET http://localhost:4004/odata/v4/my/Publishers?$filter=ID eq '4413eb4d-6acd-4962-9508-a4e786526fd5'
+
+###
+POST http://localhost:4004/odata/v4/my/Publishers
+Content-Type: application/json
+
+{
+    "name": "Jamessmith"
+}
+
+###
+PUT  http://localhost:4004/odata/v4/my/Publishers(2ba162de-7855-4db5-8a54-b9cb3385b061)
+Content-Type: application/json
+
+{
+    "name": "Anne"
+}
+
+
+
+###
+GET http://localhost:4004/odata/v4/my/Categories
+
+###
+POST http://localhost:4004/odata/v4/my/Categories
+Content-Type: application/json
+
+{
+    "name": "BTP devops"
+}
+
+###
+GET http://localhost:4004/odata/v4/my/Orders
+
+###
+POST http://localhost:4004/odata/v4/my/Orders
+Content-Type: application/json
+
+{
+    "orderDate":"2024-09-12",
+    "customer" : {"ID":"de308945-8e3b-414d-93c1-0c4f6bce3cd0"}
+}
+
+###
+GET http://localhost:4004/odata/v4/my/Customers
+
+###
+POST http://localhost:4004/odata/v4/my/Customers
+Content-Type: application/json
+
+{
+    "name":"Anni Jackson",
+    "email" : "anni@gmail.com"
+}

@@ -1,0 +1,7 @@
+CREATE COLUMN TABLE "CS1TAB" (
+   "SalesOrderId" NVARCHAR(10) NOT NULL COMMENT 'Sales Order ID',
+   "ProductId" NVARCHAR(10) NOT NULL COMMENT 'Product ID',
+   "Quantity" INTEGER NOT NULL COMMENT 'Quantity',  -- Ensure Quantity is NOT NULL if necessary
+   "DeliveryDate" DATE COMMENT 'Scheduled Delivery Date',
+   PRIMARY KEY ("SalesOrderId")
+);

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="portalSRV" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation Term="Core.Links">
+                <Collection>
+                    <Record>
+                        <PropertyValue Property="rel" String="author"/>
+                        <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Requests" EntityType="portalSRV.Requests"/>
+                <ActionImport Name="approveRequest" Action="portalSRV.approveRequest"/>
+            </EntityContainer>
+            <EntityType Name="Requests">
+                <Key>
+                    <PropertyRef Name="requestId"/>
+                </Key>
+                <Property Name="requestId" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="materialGroup" Type="Edm.String"/>
+                <Property Name="purchaseGroup" Type="Edm.String"/>
+                <Property Name="createdBy" Type="Edm.String"/>
+                <Property Name="requestedFor" Type="Edm.String"/>
+                <Property Name="enterpriseProcurement" Type="Edm.String"/>
+                <Property Name="enterpriseProcurementOrganizationUnit" Type="Edm.String"/>
+                <Property Name="requestType" Type="Edm.String"/>
+                <Property Name="commodityType" Type="Edm.String"/>
+                <Property Name="budgetApproved" Type="Edm.Boolean"/>
+                <Property Name="projectName" Type="Edm.String"/>
+                <Property Name="typeOfFunding" Type="Edm.String"/>
+                <Property Name="estimatedProjAmount" Type="Edm.Decimal" Precision="10" Scale="2"/>
+                <Property Name="estimatedProjStartDate" Type="Edm.Date"/>
+                <Property Name="estimatedProjEndDate" Type="Edm.Date"/>
+                <Property Name="cyberRiskLevel" Type="Edm.String"/>
+                <Property Name="potentialSupplier" Type="Edm.String"/>
+                <Property Name="nercCIP" Type="Edm.String"/>
+                <Property Name="stakeFor" Type="Edm.String"/>
+                <Property Name="frmApproval" Type="Edm.String"/>
+                <Property Name="priority" Type="Edm.String"/>
+                <Property Name="edisonRep" Type="Edm.String"/>
+                <Property Name="provideProcReqDetails" Type="Edm.String"/>
+                <Property Name="comments" Type="Edm.String"/>
+                <Property Name="status" Type="Edm.String" MaxLength="20" DefaultValue="new"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="UUID_LINK" Type="Edm.Guid"/>
+            </EntityType>
+            <Action Name="approveRequest" IsBound="false">
+                <Parameter Name="requestId" Type="Edm.String"/>
+                <Parameter Name="frmApproval" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Action>
+            <Annotations Target="portalSRV.Requests/requestId">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="portalSRV.Requests/createdAt">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

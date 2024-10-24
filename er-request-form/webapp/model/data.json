@@ -1,0 +1,116 @@
+{
+    "FormData": {
+      "CreatedBy": "Sayeed",
+  
+      "For":"Service",
+      "Project Name":"ISAT",
+      "Enterprise Procurement":"Indirect Procurement",
+      "ProjectAmount":"8000.00",
+      "FRM Approval":"Yes",
+      "Edison Rep":"",
+      "RequestedFor": [
+        {"key": "REQ_01", "value": "Requestor 1"},
+        {"key": "REQ_02", "value": "Requestor 2"},
+        {"key": "REQ_03", "value": "Requestor 3"}
+      ],
+      "MaterialGroup": [
+        {"key": "MTG_01", "value": "Material Group 1"},
+        {"key": "MTG_02", "value": "Material Group 2"},
+        {"key": "MTG_03", "value": "Material Group 3"}
+      ],
+      "PurchaseGroup": [
+        {"key": "PG_01", "value": "Purchase Group 1"},
+        {"key": "PG_02", "value": "Purchase Group 2"},
+        {"key": "PG_03", "value": "Purchase Group 3"}
+      ],
+      "OrgUnits": [
+        {"key": "OU_01", "value": "Asset Planning & Strategy"},
+        {"key": "OU_02", "value": "Audi Services"},
+        {"key": "OU_03", "value": "Business Resiliency"},
+        {"key": "OU_04", "value": "Corporate Affairs"},
+        {"key": "OU_05", "value": "Corporate Security"},
+        {"key": "OU_06", "value": "Customer Service"},
+        {"key": "OU_07", "value": "Digital Grid Service"},
+        {"key": "OU_08", "value": "Distribution"},
+        {"key": "OU_09", "value": "Edion Safety"},
+        {"key": "OU_10", "value": "Environmental Services"},
+        {"key": "OU_11", "value": "Energy Procurement & Management"},
+        {"key": "OU_12", "value": "Enterprise Risk Management"},
+        {"key": "OU_13", "value": "Ethics & Compliance"},
+        {"key": "OU_14", "value": "Generation"},
+        {"key": "OU_15", "value": "Grid Mod"},
+        {"key": "OU_16", "value": "Grid Tech"},
+        {"key": "OU_17", "value": "Human Resources"},
+        {"key": "OU_18", "value": "IT"},
+        {"key": "OU_19", "value": "Law"},
+        {"key": "OU_20", "value": "Major Projects Organization"},
+        {"key": "OU_21", "value": "Operational Services - Corporate Real Estate"},
+        {"key": "OU_22", "value": "Operational Services - Procurement"},
+        {"key": "OU_23", "value": "Operational Services - Transportation Services"},
+        {"key": "OU_24", "value": "Operational Services - Contract Management Office"},
+        {"key": "OU_25", "value": "Operational Services - Supplier Diversity & Development"},
+        {"key": "OU_26", "value": "Operational Services - Supply Management"},
+        {"key": "OU_27", "value": "Substation Construction & Management"},
+        {"key": "OU_28", "value": "SONGS"},
+        {"key": "OU_29", "value": "Transmission"}
+      ],
+      "PotentialSuppliers": [
+        {"key": "SUP_100001", "value": "100001-XYZ"},
+        {"key": "SUP_100002", "value": "100002-ABC"},
+        {"key": "SUP_100003", "value": "100003-SHK"},
+        {"key": "SUP_100004", "value": "100004-ANAND-PAG"}
+      ],
+      "ProcurementAgents": [
+        {"key": "AGENT_01", "value": "Proc-Agent-1"},
+        {"key": "AGENT_02", "value": "Proc-Agent-2"},
+        {"key": "AGENT_03", "value": "Proc-Agent-3"},
+        {"key": "AGENT_04", "value": "Proc-Agent-4"}
+      ],
+      "TypeOfFunding": [
+        {"key": "CAPITAL", "value": "Capital"},
+        {"key": "OM", "value": "O & M"},
+        {"key": "OTHER", "value": "Other"}
+      ],
+      "BudgetApproved": [
+        {"key": "YES", "value": "Yes"},
+        {"key": "NO", "value": "No"},
+        {"key": "NA", "value": "N/A"}
+      ],
+      "CommodityType": [
+        {"key": "HARDWARE", "value": "Hardware"},
+        {"key": "SOFTWARE", "value": "Software"},
+        {"key": "SERVICES", "value": "Services"},
+        {"key": "OTHER", "value": "Other"}
+      ],
+      "NERC_CIP": [
+        {"key": "YES", "value": "Yes"},
+        {"key": "NO", "value": "No"}
+      ],
+      "RequirementType": [
+        {"key": "CHANGE_ORDER", "value": "Change Order"},
+        {"key": "CONTRACT_NEGOTIATION", "value": "Contract Negotiation"},
+        {"key": "COMMERCIAL_TERMS", "value": "Commercial Terms Negotiation"},
+        {"key": "PO_REQUEST", "value": "PO Request"},
+        {"key": "PROCESS_IMPROVEMENT", "value": "Process Improvement"},
+        {"key": "RFX", "value": "RFX (RFP/RFI/RFQ)"},
+        {"key": "SUPPLIER_QUALIFICATION", "value": "Supplier Qualification"},
+        {"key": "SOW", "value": "SOW"},
+        {"key": "VENDOR_MASTER_DATA", "value": "Vendor Master Data Update"},
+        {"key": "OTHER", "value": "Other"}
+      ],
+      "CyberRiskLevel": [
+        {"key": "LEVEL_1", "value": "1"},
+        {"key": "LEVEL_2", "value": "2"},
+        {"key": "LEVEL_3", "value": "3"},
+        {"key": "LEVEL_4", "value": "4"}
+      ],
+      "Priority": [
+        {"key": "P1", "value": "P1"},
+        {"key": "P2", "value": "P2"},
+        {"key": "P3", "value": "P3"},
+        {"key": "P4", "value": "P4"}
+      ]
+    }
+  }
+  
+  

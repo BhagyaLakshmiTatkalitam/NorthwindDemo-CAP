@@ -1,0 +1,10 @@
+###
+POST http://localhost:4004/odata/v4/my-srv/Customers
+Content-Type: application/json
+
+{
+     "custid":"cust001",
+     "name":"James Berlin",
+     "location":"Europe",
+     "description": "DFGHJK"
+}
